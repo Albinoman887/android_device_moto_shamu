@@ -33,6 +33,12 @@ PRODUCT_MANUFACTURER := motorola
 $(call inherit-product, device/moto/shamu/device.mk)
 $(call inherit-product-if-exists, vendor/motorola/shamu/device-vendor.mk)
 
+# Enhanced NFC
+$(call inherit-product, vendor/droidacus/config/nfc_enhanced.mk)
+
+# Inherit some common phone device stuff.
+$(call inherit-product, vendor/droidacus/config/common_full_phone.mk)
+
 PRODUCT_NAME := aosp_shamu
 
 PRODUCT_PACKAGES += \
