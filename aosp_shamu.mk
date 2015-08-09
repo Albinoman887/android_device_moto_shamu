@@ -40,7 +40,17 @@ $(call inherit-product, vendor/droidacus/config/nfc_enhanced.mk)
 # Inherit some common phone device stuff.
 $(call inherit-product, vendor/droidacus/config/common_full_phone.mk)
 
+## Device identifier. This must come after all inclusions
 PRODUCT_NAME := aosp_shamu
+PRODUCT_BRAND := google
+PRODUCT_MODEL := Nexus 6
+
+TARGET_VENDOR := moto
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=shamu \
+    BUILD_FINGERPRINT=google/shamu/shamu:5.1.1/LYZ28E/1914015:user/release-keys \
+    PRIVATE_BUILD_DESC="shamu-user 5.1.1 LYZ28E 1914015 release-keys"
 
 PRODUCT_PACKAGES += \
     Launcher3
